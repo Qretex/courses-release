@@ -1,0 +1,38 @@
+.courseMainBox {
+  max-width: 1400px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+.course {
+    height: 100vh;
+  }
+  .course__body {
+    display: grid;
+    justify-content: center;
+
+    grid-template-columns: 463px 898px;
+    grid-template-rows: 259px 330px;
+    gap: 40px;
+  }
+  
+  
+  .course__full-description,
+  .course__details {
+    padding: 40px;
+    font-size: 18px;
+    background-color: white;
+    border-radius: 20px;
+    line-height: 22px;
+  }
+
+  .detailBtn {
+    button {
+      width: 420px;
+    }
+  }
+  

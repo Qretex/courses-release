@@ -1,0 +1,116 @@
+.modal__overlay {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.671);
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+
+  .modal__form {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    width: 451px;
+    height: 551px;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 34px 45px;
+    background-color: rgba(33, 33, 33, 0.79);
+    font-size: 14px;
+    * {
+      width: 100%;
+    }
+    p {
+      max-height: 14px;
+    }
+  }
+
+
+  .modal__heading {
+    height: 78px;
+    background-color: white;
+    border-radius: 10px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    font-size: 24px;
+    // font-family: "League Spartan";
+  }
+
+
+  .modal__button-close {
+    width: 45px;
+    height: 45px;
+    background-image: url(../images/button-close.svg);
+    background-color: transparent;
+    border: none;
+    background-size: cover;
+  }
+
+
+  .modal__subheading {
+    margin-bottom: 30px;
+    font-size: 18px;
+  }
+
+
+  .modal__input-container {
+    margin-bottom: 22px;
+  }
+
+
+  .modal__input {
+    width: calc(100% - 22px);
+
+    height: 37px;
+    margin-top: 8px;
+    background: none;
+    border: 1px solid white;
+    border-radius: 8px;
+    color: white;
+
+    padding: 0px 10px;
+  }
+
+
+  .comment {
+    padding-top: 10px;
+    height: 109px;
+  }
+
+
+  .modal__button-submit {
+    height: 63px;
+    font-size: 18px;
+    border-radius: 10px;
+    font-weight: 600;
+
+    border: none;
+
+    &:hover {
+      background-color: #11447f;
+      color: white;
+
+      border: 1px solid white
+    }
+
+    &:active {
+      background-color: #103b6d;
+      color: white;
+
+      border: 1px solid white
+    }
+  }
+
+  .modalMainBox {
+    display: flex;
+    gap: 10px;
+  }

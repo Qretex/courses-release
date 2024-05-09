@@ -1,0 +1,72 @@
+
+@import url(./blocks/intro.scss);
+@import url(./blocks/about.scss);
+@import url(./blocks/catalogue.scss);
+@import url(./blocks/contacts.scss);
+@import url(./blocks/footer.scss);
+@import url(./blocks/nav.scss);
+@import url(./blocks/course.scss);
+@import url(./blocks/modal.scss);
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body * {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter";
+}
+b.blue {
+  padding: 0;
+}
+
+button:hover {
+  cursor: pointer;
+}
+.root {
+  background-color: whitesmoke;
+}
+.main {
+  margin: 0 auto;
+  width: 80%;
+  max-width: 1600px;
+}
+
+.blue {
+  background-color: #11447f;
+  color: white;
+}
+.blue * {
+  border-color: white;
+  color: white;
+}
+.large {
+  color: #11447f;
+
+  padding: 80px 0;
+  max-height: 31px;
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 50.83px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hidden {
+  display: none !important;
+}
+.heading {
+  width: 198px;
+  height: 58px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
