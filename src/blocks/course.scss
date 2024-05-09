@@ -19,6 +19,11 @@
     grid-template-rows: 259px 330px;
     gap: 40px;
   }
+  .course__image {
+    background-size: cover;
+
+    border-radius: 20px;
+  }
   
   
   .course__full-description,

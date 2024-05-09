@@ -20,11 +20,11 @@ function CoursePage(props) {
     img,
     detailImg,
   } = data.state;
-  const { isOpen, setOpen, heading, setHeading } = props;
+  const { isOpen, setOpen, heading, setHeading, target, setTarget } = props;
 
   return (
     <div className="course main">
-      <Nav></Nav>
+      <Nav  coursePage={coursePage}  target={target} setTarget={setTarget}></Nav>
       <div className="courseMainBox">
         <div>
           <div className="blue heading">Каталог</div>

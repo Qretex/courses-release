@@ -5,7 +5,7 @@ import Modal from "./Modal";
 import { useState, useEffect } from "react";
 
 function Main(props) {
-  const {isOpen, setOpen, heading, setHeading} = props
+  const {isOpen, setOpen, heading, setHeading, target, setTarget } = props
 
 
   //retrieval of data from the API
@@ -32,11 +32,32 @@ function Main(props) {
   }, []);
 
   //массив с карточками
+  function scrollAbout() {
+    document
+      .querySelector(".about")
+      .scrollIntoView({ block: "center", behavior: "smooth" });
+  }
   function scrollCatalogue() {
     document
       .querySelector(".catalogue")
       .scrollIntoView({ block: "center", behavior: "smooth" });
   }
+  function scrollContacts() {
+    document
+      .querySelector(".contacts")
+      .scrollIntoView({ block: "center", behavior: "smooth" });
+  }
+
+  useEffect(() => {
+    if (target === '.about') {
+      scrollAbout()
+      setTarget('')
+    } else if (target === '.contacts') {
+      scrollContacts()
+      setTarget('')}else if (target === '.catalogue') {
+        scrollCatalogue()
+        setTarget('')}
+  });
 
   return (
     <main className="main">

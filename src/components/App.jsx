@@ -9,14 +9,15 @@ import { useState } from "react";
 function App() {
   const [isOpen, setOpen] = useState(false);
   const [heading, setHeading] = useState("");
+  const [target, setTarget] = useState("")
   return (
     <div className="root">
        <Router>
       <Routes>
         <Route path="/">
-          <Route index element={<Main  isOpen={isOpen} setOpen={setOpen} heading={heading} setHeading={setHeading} ></Main>} /> {/* Default component */}
+          <Route index element={<Main  isOpen={isOpen} setOpen={setOpen} heading={heading} setHeading={setHeading}  target={target} setTarget={setTarget} ></Main>} /> {/* Default component */}
         </Route>
-        <Route path="/course" element={<CoursePage  isOpen={isOpen} setOpen={setOpen} heading={heading} setHeading={setHeading} ></CoursePage>}>
+        <Route path="/course" element={<CoursePage  isOpen={isOpen} setOpen={setOpen} heading={heading} setHeading={setHeading}  target={target} setTarget={setTarget} ></CoursePage>}>
 
         </Route>
       </Routes>
