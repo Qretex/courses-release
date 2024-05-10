@@ -10,7 +10,7 @@ function Main(props) {
   //retrieval of data from the API
   const [cards, setCards] = useState([]);
   useEffect(() => {
-    fetch("http://0.0.0.0:1337/api/courses", {
+    fetch("http://127.0.0.1:1337/api/courses", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
