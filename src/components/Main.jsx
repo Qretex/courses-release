@@ -5,13 +5,12 @@ import Modal from "./Modal";
 import { useState, useEffect } from "react";
 
 function Main(props) {
-  const {isOpen, setOpen, heading, setHeading, target, setTarget } = props
-
+  const { isOpen, setOpen, heading, setHeading, target, setTarget } = props;
 
   //retrieval of data from the API
-  const [cards, setCards] = useState([])
+  const [cards, setCards] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:1337/api/courses", {
+    fetch("http://0.0.0.0:1337/api/courses", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -19,9 +18,9 @@ function Main(props) {
     })
       .then((response) => response.json())
       .then((data) => {
-        const cards = data.data
+        const cards = data.data;
         //console.log(cards)
-        cards.forEach(element => {
+        cards.forEach((element) => {
           //console.log(element.attributes.previewImageUrl)
         });
         setCards(cards);
@@ -49,14 +48,16 @@ function Main(props) {
   }
 
   useEffect(() => {
-    if (target === '.about') {
-      scrollAbout()
-      setTarget('')
-    } else if (target === '.contacts') {
-      scrollContacts()
-      setTarget('')}else if (target === '.catalogue') {
-        scrollCatalogue()
-        setTarget('')}
+    if (target === ".about") {
+      scrollAbout();
+      setTarget("");
+    } else if (target === ".contacts") {
+      scrollContacts();
+      setTarget("");
+    } else if (target === ".catalogue") {
+      scrollCatalogue();
+      setTarget("");
+    }
   });
 
   return (
@@ -81,33 +82,25 @@ function Main(props) {
             </div>
             <div className="about__fact">
               <div className="about__icon"></div>
-                <p>
-                  Десятки практических задач, повторяющих реальные рабочие
-                </p>
+              <p>Десятки практических задач, повторяющих реальные рабочие</p>
             </div>
             <div className="about__fact">
               <div className="about__icon"></div>
-                <p>
-                  Возможность собрать своё портфолио в процессе обучения
-                </p>
+              <p>Возможность собрать своё портфолио в процессе обучения</p>
             </div>
             <div className="about__fact">
               <div className="about__icon"></div>
-                <p>
-                  Лучшие подходы к образованию, нацеленные на результат
-                </p>
+              <p>Лучшие подходы к образованию, нацеленные на результат</p>
             </div>
             <div className="about__fact">
               <div className="about__icon"></div>
-                <p>
-                  Индивидуальный подход к каждому
-                </p>
+              <p>Индивидуальный подход к каждому</p>
             </div>
             <div className="about__fact">
               <div className="about__icon"></div>
-                <p>
-                  Развитие софтскилов для быстрого входа в IT и работы в команде
-                </p>
+              <p>
+                Развитие софтскилов для быстрого входа в IT и работы в команде
+              </p>
             </div>
           </div>
           <div className="card-two blue">
@@ -124,8 +117,8 @@ function Main(props) {
           </div>
           <div className="card-six blue">
             <b className="blue">В конце</b> вы получите диплом государственного
-            образца, возможность стажировки на нашей площадке, а также ознакомитесь с
-            крутыми стартапами и проектами!
+            образца, возможность стажировки на нашей площадке, а также
+            ознакомитесь с крутыми стартапами и проектами!
           </div>
           <div className="card-seven large">БОЛЬШЕ ЧЕМ КУРСЫ</div>
         </div>
@@ -149,7 +142,9 @@ function Main(props) {
               isOpen={isOpen}
               setOpen={setOpen}
               heading={heading}
-              setHeading={setHeading} img={card.attributes.previewImageUrl} detailImg={card.attributes.detailImageUrl}
+              setHeading={setHeading}
+              img={card.attributes.previewImageUrl}
+              detailImg={card.attributes.detailImageUrl}
             ></CourseCard>
           ))}
         </div>
@@ -157,6 +152,7 @@ function Main(props) {
       <section className="contacts">
         <div className="blue heading">Контакты</div>
         <iframe
+          title="yandex"
           id="123"
           src="https://yandex.ru/map-widget/v1/?ll=30.329502%2C59.934600&mode=search&oid=192927373843&ol=biz&z=16.45"
           className="contacts__map"
