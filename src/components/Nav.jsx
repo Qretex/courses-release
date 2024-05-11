@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 
 function Nav(props) {
   const navigate = useNavigate();
-  const { coursePage, target, setTarget } = props;
+  const { coursePage, setTarget } = props;
 
   function scrollAbout() {
     document
@@ -36,23 +36,26 @@ function Nav(props) {
       </p>
       <p
         className="nav__link"
-        onClick={coursePage
-          ? () => {
-              navigate("/");
-              setTarget('.catalogue')
-            }
-          : scrollCatalogue}
+        onClick={
+          coursePage
+            ? () => {
+                navigate("/");
+                setTarget(".catalogue");
+              }
+            : scrollCatalogue
+        }
       >
         Каталог
       </p>
       <p
         className="nav__link"
-        onClick={coursePage
-          ? () => {
-              navigate("/");
-              setTarget('.contacts')
-            }
-          : scrollContacts
+        onClick={
+          coursePage
+            ? () => {
+                navigate("/");
+                setTarget(".contacts");
+              }
+            : scrollContacts
         }
       >
         Контакты

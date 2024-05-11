@@ -1,7 +1,5 @@
 import Main from "./Main";
 import CoursePage from "./CoursePage";
-import Nav from "./Nav";
-import Footer from "./Footer";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";

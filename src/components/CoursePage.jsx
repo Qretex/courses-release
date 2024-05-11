@@ -24,7 +24,7 @@ function CoursePage(props) {
 
   return (
     <div className="course main">
-      <Nav  coursePage={coursePage}  target={target} setTarget={setTarget}></Nav>
+      <Nav coursePage={coursePage} target={target} setTarget={setTarget}></Nav>
       <div className="courseMainBox">
         <div>
           <div className="blue heading">Каталог</div>
@@ -43,7 +43,10 @@ function CoursePage(props) {
             setHeading={setHeading}
           ></CourseCard>
           <div className="course__full-description">{fullDesc}</div>
-          <div className="course__image" style={{backgroundImage: `url(${detailImg})`}}></div>
+          <div
+            className="course__image"
+            style={{ backgroundImage: `url(${detailImg})` }}
+          ></div>
           <div className="course__details">
             <b> Преподаватель:</b> <span> {tutor} </span> <br />
             <br /> <b> Расписание:</b> <span> {days} </span> <br />
@@ -52,7 +55,8 @@ function CoursePage(props) {
             <br />
             <b> Вы научитесь:</b> <span> {skills} </span> <br />
             <br />
-            <b> Вы получите:</b> <span> Сертификат о прохождении курса "{name}" </span>
+            <b> Вы получите:</b>{" "}
+            <span> Сертификат о прохождении курса "{name}" </span>
           </div>
         </div>
       </div>

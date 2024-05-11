@@ -4,30 +4,30 @@ import CourseCard from "./CourseCard";
 import Modal from "./Modal";
 import { useState, useEffect } from "react";
 
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API_TOKEN = process.env.REACT_APP_API_TOKEN;
+
 function Main(props) {
   const { isOpen, setOpen, heading, setHeading, target, setTarget } = props;
 
   //retrieval of data from the API
   const [cards, setCards] = useState([]);
   useEffect(() => {
-    fetch("https://admin.my-courses.qretex.com/api/courses", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        const cards = data.data;
-        //console.log(cards)
-        cards.forEach((element) => {
-          //console.log(element.attributes.previewImageUrl)
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`${BACKEND_URL}/api/courses?populate=*`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: API_TOKEN,
+          },
         });
-        setCards(cards);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+        const data = await response.json();
+        setCards(data.data);
+      } catch (error) {}
+    };
+
+    fetchData();
   }, []);
 
   //массив с карточками
@@ -126,27 +126,28 @@ function Main(props) {
       <section className="catalogue">
         <div className="blue heading">Каталог</div>
         <div className="catalogue__cards">
-          {cards.map((card) => (
-            <CourseCard
-              key={card.attributes.name}
-              name={card.attributes.name}
-              duration={card.attributes.hours}
-              desc={card.attributes.previewText}
-              salary={card.attributes.salary}
-              fullDesc={card.attributes.detailText[0].children[0].text}
-              tutor={card.attributes.teacher}
-              days={card.attributes.timetable}
-              time={card.attributes.time}
-              skills={card.attributes.willLearn}
-              coursePage={false}
-              isOpen={isOpen}
-              setOpen={setOpen}
-              heading={heading}
-              setHeading={setHeading}
-              img={card.attributes.previewImageUrl}
-              detailImg={card.attributes.detailImageUrl}
-            ></CourseCard>
-          ))}
+          {cards &&
+            cards.map((card) => (
+              <CourseCard
+                key={card.attributes.name}
+                name={card.attributes.name}
+                duration={card.attributes.hours}
+                desc={card.attributes.previewText}
+                salary={card.attributes.salary}
+                fullDesc={card.attributes.detailText[0].children[0].text}
+                tutor={card.attributes.teacher}
+                days={card.attributes.timetable}
+                time={card.attributes.time}
+                skills={card.attributes.willLearn}
+                coursePage={false}
+                isOpen={isOpen}
+                setOpen={setOpen}
+                heading={heading}
+                setHeading={setHeading}
+                img={`${BACKEND_URL}${card.attributes.previewImage.data.attributes.url}`}
+                detailImg={`${BACKEND_URL}${card.attributes.detailImage.data.attributes.url}`}
+              ></CourseCard>
+            ))}
         </div>
       </section>
       <section className="contacts">
