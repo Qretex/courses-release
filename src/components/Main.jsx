@@ -155,7 +155,7 @@ function Main(props) {
         <iframe
           title="yandex"
           id="123"
-          src="https://yandex.ru/map-widget/v1/?ll=30.329502%2C59.934600&mode=search&oid=192927373843&ol=biz&z=16.45"
+          src="https://yandex.ru/map-widget/v1/?indoorLevel=1&ll=38.978607%2C55.800990&mode=search&oid=1145184216&ol=biz&z=18.17"
           className="contacts__map"
         ></iframe>
 
