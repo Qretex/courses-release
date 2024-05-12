@@ -4,6 +4,12 @@
   display: flex;
   flex-direction: column;
   border-bottom: 2px solid gray;
+
+  @media (max-width: 1450px) {
+    max-width: 900px;
+    
+    align-items: center;
+  }
 }
 .contacts__map {
   // width: 100%;
@@ -11,6 +17,13 @@
   max-width: 1600px;
   padding: 1vw;
   border: 2px solid black;
+
+  @media (max-width: 1450px) {
+    max-width: 900px;
+
+    width: 100%;
+  }
+
   * {
     margin: 0;
     padding: 0;
@@ -21,6 +34,14 @@
   display: flex;
   gap: 120px;
   font-size: 20px;
+
+  @media (max-width: 1450px) {
+    max-width: 900px;
+    gap: 20px;
+
+    font-size: 14px;
+  }
+
   p.blue {
     padding: 16px;
     border-radius: 12px;
@@ -28,6 +49,11 @@
   }
   .contacts__adress {
     width: 475px;
+
+    @media (max-width: 1450px) {
+      max-width: 900px;
+      width: auto;
+    }
 
     .blue {
       white-space: nowrap;
@@ -44,6 +70,16 @@
   right: -20%;
   top: 40px;
   height: fit-content;
+
+  @media (max-width: 1450px) {
+    max-width: 900px;
+    right: 0;
+
+    gap: 30px;
+
+    margin-left: 100px;
+  }
+
   *:hover {
     cursor: pointer;
   }

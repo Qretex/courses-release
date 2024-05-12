@@ -11,4 +11,11 @@
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: 1450px) {
+      max-width: 900px;
+      font-size: 12px;
+
+      gap: 40px;
+    }
   }

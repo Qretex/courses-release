@@ -9,6 +9,11 @@
     flex-direction: column;
     align-items: center;
     border-radius: 69px;
+
+    @media (max-width: 1450px) {
+      max-width: 100%;
+      width: 900px;
+    }
   }
 
   /*intro*/
