@@ -1,4 +1,3 @@
-
 @import url(./blocks/intro.scss);
 @import url(./blocks/about.scss);
 @import url(./blocks/catalogue.scss);
@@ -16,11 +15,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 body * {
   margin: 0;
   padding: 0;
   font-family: "Inter";
 }
+
 b.blue {
   padding: 0;
 }
@@ -28,9 +29,11 @@ b.blue {
 button:hover {
   cursor: pointer;
 }
+
 .root {
   background-color: whitesmoke;
 }
+
 .main {
   margin: 0 auto;
   width: 80%;
@@ -48,10 +51,12 @@ button:hover {
   background-color: #11447f;
   color: white;
 }
+
 .blue * {
   border-color: white;
   color: white;
 }
+
 .large {
   color: #11447f;
 
@@ -68,9 +73,11 @@ button:hover {
     font-size: 24px;
   }
 }
+
 .hidden {
   display: none !important;
 }
+
 .heading {
   width: 198px;
   height: 58px;
@@ -80,4 +87,3 @@ button:hover {
   align-items: center;
   margin-bottom: 50px;
 }
-

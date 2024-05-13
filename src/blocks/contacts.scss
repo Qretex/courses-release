@@ -7,10 +7,11 @@
 
   @media (max-width: 1450px) {
     max-width: 900px;
-    
+
     align-items: center;
   }
 }
+
 .contacts__map {
   // width: 100%;
   height: 22vw;
@@ -29,6 +30,7 @@
     padding: 0;
   }
 }
+
 .contacts__details {
   margin-top: 55px;
   display: flex;
@@ -47,6 +49,7 @@
     border-radius: 12px;
     margin-top: 12px;
   }
+
   .contacts__adress {
     width: 475px;
 
@@ -84,6 +87,7 @@
     cursor: pointer;
   }
 }
+
 .contacts__logo-vk {
   width: 64px;
   height: 40px;
