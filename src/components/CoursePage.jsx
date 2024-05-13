@@ -26,7 +26,7 @@ function CoursePage(props) {
     <div className="course main">
       <Nav coursePage={coursePage} target={target} setTarget={setTarget}></Nav>
       <div className="courseMainBox">
-        <div>
+        <div className="mainTitle"> 
           <div className="blue heading">Каталог</div>
         </div>
         <div className="course__body">
