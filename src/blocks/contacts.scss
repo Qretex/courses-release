@@ -10,10 +10,18 @@
 
     align-items: center;
   }
+
+  @media (max-width: 810px) {
+    width: 100%;
+
+    margin-top: 100px;
+    padding-bottom: 120px;
+
+    border-bottom: 1px solid gray;
+  }
 }
 
 .contacts__map {
-  // width: 100%;
   height: 22vw;
   max-width: 1600px;
   padding: 1vw;
@@ -23,6 +31,13 @@
     max-width: 900px;
 
     width: 100%;
+  }
+
+  @media (max-width: 810px) {
+    width: 100%;
+    height: 200px;
+
+    border: 1px solid black;
   }
 
   * {
@@ -44,10 +59,23 @@
     font-size: 14px;
   }
 
+  @media (max-width: 810px) {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+  }
+
   p.blue {
     padding: 16px;
     border-radius: 12px;
     margin-top: 12px;
+
+    @media (max-width: 810px) {
+      width: auto;
+      display: flex;
+      justify-content: center;
+    }
   }
 
   .contacts__adress {
@@ -81,6 +109,14 @@
     gap: 30px;
 
     margin-left: 100px;
+  }
+
+  @media (max-width: 810px) {
+    width: 100%;
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
   }
 
   *:hover {
