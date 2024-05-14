@@ -1,7 +1,32 @@
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API_TOKEN = process.env.REACT_APP_API_TOKEN;
+
+const putData = async (formData) => {
+  try {
+    await fetch(`${BACKEND_URL}/api/sourse-registrations`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: API_TOKEN,
+      },
+      body: JSON.stringify({
+        data: {
+          course: `${formData.course}`,
+          name: `${formData.name}`,
+          phone: `${formData.phone}`,
+          comment: `${formData.comment}`,
+        },
+      }),
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 function Modal(props) {
   const { isOpen, setOpen, heading, setHeading } = props;
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
     const data = new FormData(e.target);
@@ -10,6 +35,8 @@ function Modal(props) {
     e.target.querySelectorAll(".modal__input").forEach((item) => {
       item.value = "";
     });
+
+    await putData(value);
 
     setOpen(false);
     setHeading("");
