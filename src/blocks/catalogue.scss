@@ -120,7 +120,7 @@
 
 .card__description {
   @media (max-width: 810px) {
-    font-size: 14px !important;
+    font-size: 12px !important;
     padding: 20px 20px;
 }
 }
@@ -137,11 +137,13 @@
 
   @media (max-width: 810px) {
     padding-bottom: 15px;
+
+    gap: 10px;
   }
 
   button {
     @media (max-width: 810px) {
-      width: 150px;
+      width: 115px;
       height: 50px;
 
       font-size: 14px;
@@ -175,7 +177,7 @@
   font-weight: 600;
 
   @media (max-width: 810px) {
-    font-size: 16px;
+    font-size: 14px;
     padding: 0px 20px;
 }
 }
