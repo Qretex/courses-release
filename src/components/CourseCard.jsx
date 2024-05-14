@@ -72,7 +72,7 @@ function CourseCard(props) {
       </p>
 
       {coursePage ? (
-        <div className="card__buttons card__buttons--testClass detailBtn">
+        <div className="card__buttons card__buttons--testClass detailBtn btnHide">
           <button
             onClick={() => {
               setOpen(true);
@@ -83,7 +83,7 @@ function CourseCard(props) {
           </button>
         </div>
       ) : (
-        <div className="card__buttons hidden">
+        <div className="card__buttons hidden btnHide">
           <button
             onClick={() => {
               setOpen(true);

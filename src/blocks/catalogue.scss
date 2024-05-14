@@ -87,6 +87,11 @@
   padding: 5px 55px 0 55px;
   position: relative;
 
+  @media (min-width: 1448px) and (max-width: 1880px) {
+    font-size: 16px;
+    padding: 5px 35px 0 35px;
+  }
+
   @media (max-width: 810px) {
     font-size: 16px;
     padding: 5px 15px;

@@ -121,8 +121,17 @@
 
 .card-two {
   max-width: 380px;
-  padding: 56px 75px;
+  padding: 45px 75px;
   height: fit-content;
+
+  @media (min-width: 1448px) and (max-width: 1880px) {
+    font-size: 14px;
+    padding: 35px 55px;
+
+    b {
+      font-size: 16px;
+    }
+  }
 
   @media (max-width: 1450px) {
     max-width: 100%;
@@ -167,6 +176,15 @@
 .card-five {
   max-width: 382px;
 
+  @media (min-width: 1448px) and (max-width: 1880px) {
+    font-size: 14px;
+    padding: 35px 55px;
+
+    b {
+      font-size: 16px;
+    }
+  }
+
   @media (max-width: 1450px) {
     max-width: 900px;
     font-size: 14px;
@@ -181,6 +199,15 @@
 
 .card-six {
   max-width: 382px;
+
+  @media (min-width: 1448px) and (max-width: 1880px) {
+    font-size: 14px;
+    padding: 35px 55px;
+
+    b {
+      font-size: 16px;
+    }
+  }
 
   @media (max-width: 1450px) {
     max-width: 900px;

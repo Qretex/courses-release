@@ -9,6 +9,10 @@
   @media (max-width: 1450px) {
     max-width: 900px;
   }
+
+  @media (max-width: 810px) {
+    font-size: 14px;
+  }
 }
 
 .nav__link:hover {

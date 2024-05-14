@@ -32,6 +32,8 @@
 
       grid-template-columns: none;
       justify-items: center;
+
+      margin-bottom: 100px;
     }
   }
   .course__image {
@@ -56,12 +58,44 @@
 
     @media (max-width: 1450px) {
       max-width: 60%;
+      height: auto;
+
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .course__full-description {
+    @media (max-width: 1450px) {
+      max-width: 60%;
+
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .course__details {
+    @media (max-width: 1450px) {
+      padding: 40px;
+      font-size: 18px;
+      background-color: rgb(255, 255, 255);
+
+      border-radius: 20px;
+      line-height: 22px;  
     }
   }
 
   .detailBtn {
     button {
       width: 420px;
+    }
+  }
+
+  .btnHide {
+    button {
+      @media (max-width: 810px) {
+        display: none !important;
+      }
     }
   }
   
