@@ -25,26 +25,29 @@ jobs:
           builder: ${{ steps.buildx.outputs.name }}
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/${{ secrets.REGISTRY_NAME}}:${{ github.sha }}, ${{ secrets.DOCKER_USERNAME }}/${{ secrets.REGISTRY_NAME}}:latest
+          build-args: |
+            REACT_APP_BACKEND_URL=${{ secrets.REACT_APP_BACKEND_URL }}
+            REACT_APP_API_TOKEN=${{ secrets.REACT_APP_API_TOKEN }}
 
-  # deploy:
-  #   runs-on: ubuntu-latest
-  #   needs: build
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
 
-  #   steps:
-  #     - name: Deploy via Portainer
-  #       run: |
-  #         # Get the current container ID
-  #         CONTAINER_ID=$(curl -s -X GET "https://${{ secrets.PORTAINER_HOST }}/api/endpoints/${{ secrets.ENDPOINT_ID }}/docker/containers/${{ secrets.CONTAINER_NAME }}/json" \
-  #         -H "X-API-Key: ${{ secrets.PORTAINER_API_TOKEN }}" \
-  #         -H "Content-Type: application/json" | jq -r ".Id")
+    steps:
+      - name: Deploy via Portainer
+        run: |
+          # Get the current container ID
+          CONTAINER_ID=$(curl -s -X GET "https://${{ secrets.PORTAINER_HOST }}/api/endpoints/${{ secrets.ENDPOINT_ID }}/docker/containers/${{ secrets.CONTAINER_NAME }}/json" \
+          -H "X-API-Key: ${{ secrets.PORTAINER_API_TOKEN }}" \
+          -H "Content-Type: application/json" | jq -r ".Id")
 
-  #         # Recreate the container
-  #         curl -s -X POST "https://${{ secrets.PORTAINER_HOST }}/api/docker/${{ secrets.ENDPOINT_ID }}/containers/$CONTAINER_ID/recreate" \
-  #         -H "X-API-Key: ${{ secrets.PORTAINER_API_TOKEN }}" \
-  #         -H "Content-Type: application/json" \
-  #         -d '{"PullImage": true}'
+          # Recreate the container
+          curl -s -X POST "https://${{ secrets.PORTAINER_HOST }}/api/docker/${{ secrets.ENDPOINT_ID }}/containers/$CONTAINER_ID/recreate" \
+          -H "X-API-Key: ${{ secrets.PORTAINER_API_TOKEN }}" \
+          -H "Content-Type: application/json" \
+          -d '{"PullImage": true}'
 
-  #         # Prune unused images
-  #         curl -s -X POST "https://${{ secrets.PORTAINER_HOST }}/api/endpoints/${{ secrets.ENDPOINT_ID }}/docker/images/prune" \
-  #         -H "X-API-Key: ${{ secrets.PORTAINER_API_TOKEN }}" \
-  #         -H "Content-Type: application/json"
+          # Prune unused images
+          curl -s -X POST "https://${{ secrets.PORTAINER_HOST }}/api/endpoints/${{ secrets.ENDPOINT_ID }}/docker/images/prune" \
+          -H "X-API-Key: ${{ secrets.PORTAINER_API_TOKEN }}" \
+          -H "Content-Type: application/json"
