@@ -27,6 +27,7 @@ jobs:
           tags: ${{ secrets.DOCKER_USERNAME }}/${{ secrets.REGISTRY_NAME}}:${{ github.sha }}, ${{ secrets.DOCKER_USERNAME }}/${{ secrets.REGISTRY_NAME}}:latest
           build-args: |
             REACT_APP_BACKEND_URL=${{ secrets.REACT_APP_BACKEND_URL }}
+          secrets: |
             REACT_APP_API_TOKEN=${{ secrets.REACT_APP_API_TOKEN }}
 
   deploy:
