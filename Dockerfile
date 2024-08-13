@@ -17,10 +17,11 @@ COPY . .
 ARG REACT_APP_BACKEND_URL
 RUN --mount=type=secret,id=REACT_APP_API_TOKEN \
     REACT_APP_API_TOKEN = ${cat /run/secrets/REACT_APP_API_TOKEN} && \
-    echo "Используем API токен: $API_TOKEN"
+    echo "Используем API токен: $REACT_APP_API_TOKEN"
 
 # Устанавливаем переменные
 ENV REACT_APP_BACKEND_URL=${REACT_APP_BACKEND_URL}
+ENV REACT_APP_API_TOKEN=${REACT_APP_API_TOKEN}
 
 # Создаем production сборку
 RUN yarn build
